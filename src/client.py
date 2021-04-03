@@ -23,6 +23,7 @@ def client(ip, port):
         if command == 'quit':
             ## Terminates the program when the given command is 'quit'
             print('disconnecting...')
+            client.close()
             quit()
         
         else:

